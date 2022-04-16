@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>User Dashboard</title>
+    <title>New Request</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -54,23 +54,23 @@
                             <a href="#">Home 3</a>
                         </li> 
                     </ul>-->
-                <li class="active">    
-                	<a href="#">Personal Details</a>
+                <li>    
+                	<a href="user-personal-detail.jsp">Personal Details</a>
                 </li>
                 <li>
-                    <a href="#">New Trip Request</a>
+                    <a href="user-new-trip.jsp">New Trip Request</a>
                 </li>
                 <li>
-                    <a href="#">Pending Request</a>
+                    <a href="user-pending-request.jsp">Pending Request</a>
+                </li>
+                <li class="active">
+                    <a href="user-approved-request.jsp">Approved Request</a>
                 </li>
                 <li>
-                    <a href="#">Approved Request</a>
+                    <a href="user-trip-history.jsp">Trip History</a>
                 </li>
                 <li>
-                    <a href="#">Trip History</a>
-                </li>
-                <li>
-                    <a href="#">Logout</a>
+                    <a href="index.jsp">Logout</a>
                 </li>
             </ul>
 
@@ -96,7 +96,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <h3 class="nav-link">Personal Information</h3>
+                                <h3 class="nav-link">New Trip Request</h3>
                             </li>
                         </ul>
                     </div>
@@ -108,17 +108,8 @@
 
             <div class="line"></div>
 
-            <h2>Lorem Ipsum Dolor</h2>
+            <h3>Create new trip request</h3>
            
-
-            <div class="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-          
-
-            <div class="line"></div>
-
-            <h3>Lorem Ipsum Dolor</h3>
            
         </div>
     </div>
