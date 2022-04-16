@@ -41,8 +41,8 @@
 
             <ul class="list-unstyled components">
                 <p>Trilok Sharma</p>
-                
-                    <!-- <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
+
+                <!-- <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
                       <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
                             <a href="#">Home 1</a>
@@ -54,8 +54,8 @@
                             <a href="#">Home 3</a>
                         </li> 
                     </ul>-->
-                <li>    
-                	<a href="user-personal-detail.jsp">Personal Details</a>
+                <li>
+                    <a href="user-personal-detail.jsp">Personal Details</a>
                 </li>
                 <li class="active">
                     <a href="user-new-trip.jsp">New Trip Request</a>
@@ -74,13 +74,14 @@
                 </li>
             </ul>
 
-            
+
         </nav>
 
         <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar bg-light text-white" style="background: linear-gradient(to right, #754edd, #e2114f);">
+            <nav class="navbar navbar-expand-lg navbar bg-light text-white"
+                style="background: linear-gradient(to right, #754edd, #e2114f);">
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn btn-info">
@@ -103,14 +104,160 @@
                 </div>
             </nav>
 
-            
-           
-
+            <h3>Create new trip request</h3>
             <div class="line"></div>
 
-            <h3>Create new trip request</h3>
-           
-           
+            <form>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="purpose">Travel Purpose</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <select name="purpose" id="purpose" class="form-control border border-primary">
+                                <option value="#">-- Select --</option>
+                                <option value="Project2">project 2</option>
+                                <option value="Project3">project 3</option>
+                                <option value="Project4">project 4</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="dcountry">Departing country</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="dcountry" class="form-control border border-primary" id="dcountry">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="ddate">Departure date</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="date" name="ddate" class="form-control border border-primary" id="ddate">
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="rdate">Return date</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="date" name="rdate" class="form-control border border-primary" id="rdate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="ecost">Estimated cost</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="number" name="ecost" class="form-control border border-primary" id="ecost">
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="advance">Advance amount</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="number" name="advance" class="form-control border border-primary" id="advance">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="d_addr">Destination address</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="d_addr" class="form-control border border-primary" id="d_addr"
+                                placeholder="Address line 1, Street name">
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="dcity">Destination City</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="dcity" class="form-control border border-primary" id="dcity">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="dcountry">Destination Country</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="dcountry" class="form-control border border-primary" id="dcountry">
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="postal">Postal code</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="postal" class="form-control border border-primary" id="postal">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="accomodation">Acomodation required?</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <select name="accomodation" id="Accomodation" class="form-control border border-primary">
+                                <option value="no">No</option>
+                                <option value="yes">Yes</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="currency">Currency</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="currency" class="form-control border border-primary" id="currency">
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xl-6 text-right">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 col-xl-6 text-left">
+                        <button type="reset" class="btn btn-danger">Reset</button>
+                    </div>
+                </div>
+
+
+            </form>
+
+            <!-- <div class="form-group">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 text-center">
+                        <label for="dcountry">Destination Country</label>
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                        <input type="text" name="dcountry" class="form-control border border-primary" id="dcountry">
+                    </div>
+
+                    <div class="col-md-3 col-sm-12 text-center">
+                        <label for="postal">Postal code</label>
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                        <input type="text" name="postal" class="form-control border border-primary" id="pstal">
+                    </div>
+                </div>
+            </div> -->
+
         </div>
     </div>
 
