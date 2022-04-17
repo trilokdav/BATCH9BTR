@@ -15,6 +15,10 @@
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+        
+    <style type="text/css">
+   
+    </style>
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -106,9 +110,121 @@
             
            
 
-            <div class="line"></div>
-
+            <div class="line"></div> 
             <h3>All pending requests</h3>
+            <hr/>
+            
+			<div class="card shadow  mb-5  rounded">
+			  <div class="card-header text-light" style="background: linear-gradient(to right, #754edd, #e2114f);">
+			   <div class="row">
+				  <div class="col-md-9 col-sm-12 col-xl-9 ">
+				  <h4>Trip No. 1121</h4>
+				  </div>
+				  <div class="col-md-3 col-sm-12 col-xl-3 p-1 d-flex justify-content-center">
+				  <span class="badge badge-pill badge-info p-2" style="font-size: 16px;">Waiting for approval</span>
+				  </div>
+				</div>
+				</div>
+			  <div class="card-body" style="background:linen;">		    
+			      <div class="row">
+			      	<div class="col-md-4 col-sm-4 col-xl-4 bg-light text-center">
+			      	<span> Depart date: 18/04/2022 </span>
+			      	</div>
+			      	
+			      	<div class="col-md-4 col-sm-4 col-xl-4  text-center">
+			      	<span> Return date: 25/04/2022 </span>
+			      	</div>
+			      	
+			      	<div class="col-md-4 col-sm-4 col-xl-4 bg-light text-center">
+			      	<span> Destination Country: Russia </span>
+			      	</div>			      
+			      </div>
+			      
+			      <br/>
+			      
+			       <div class="row">
+			       
+			        <div class="col-md-3 col-sm-3 col-xl-3 bg-light text-center">
+			      	<span> Departure country: India </span>
+			      	</div>
+			      	
+			      	
+			      	<div class="col-md-3 col-sm-3 col-xl-3  text-center">
+			      	<span> Accommodation Required: Yes </span>
+			      	</div>
+			      	
+			      	<div class="col-md-3 col-sm-3 col-xl-3 bg-light text-center">
+			      	<span> Advance Amount: 15,000 Rs. </span>
+			      	</div>
+			      	
+			      	<div class="col-md-3 col-sm-3 col-xl-3 text-center">
+			      	<span> Estimated Cost: 28,000 Rs. </span>
+			      	</div>	      			      
+			      </div>
+			
+			      <hr/> 
+			      <footer class="blockquote-footer">Request Submitted on 12/04/2022</footer>
+	   
+			  </div>
+			</div> 
+			
+			
+			<div class="card shadow  mb-5  rounded">
+			  <div class="card-header text-light" style="background: linear-gradient(to right, #754edd, #e2114f);">
+			   <div class="row">
+				  <div class="col-md-9 col-sm-12 col-xl-9 ">
+				  <h4>Trip No. 1121</h4>
+				  </div>
+				  <div class="col-md-3 col-sm-12 col-xl-3 p-1 d-flex justify-content-center">
+				  <span class="badge badge-pill badge-info p-2" style="font-size: 16px;">Waiting for approval</span>
+				  </div>
+				</div>
+				</div>
+			  <div class="card-body" style="background:linen;">		    
+			      <div class="row">
+			      	<div class="col-md-4 col-sm-4 col-xl-4 bg-light text-center">
+			      	<span> Depart date: 18/04/2022 </span>
+			      	</div>
+			      	
+			      	<div class="col-md-4 col-sm-4 col-xl-4  text-center">
+			      	<span> Return date: 25/04/2022 </span>
+			      	</div>
+			      	
+			      	<div class="col-md-4 col-sm-4 col-xl-4 bg-light text-center">
+			      	<span> Destination Country: Russia </span>
+			      	</div>			      
+			      </div>
+			      
+			      <br/>
+			      
+			       <div class="row">
+			       
+			        <div class="col-md-3 col-sm-3 col-xl-3 bg-light text-center">
+			      	<span> Departure country: India </span>
+			      	</div>
+			      	
+			      	
+			      	<div class="col-md-3 col-sm-3 col-xl-3  text-center">
+			      	<span> Accommodation Required: Yes </span>
+			      	</div>
+			      	
+			      	<div class="col-md-3 col-sm-3 col-xl-3 bg-light text-center">
+			      	<span> Advance Amount: 15,000 Rs. </span>
+			      	</div>
+			      	
+			      	<div class="col-md-3 col-sm-3 col-xl-3 text-center">
+			      	<span> Estimated Cost: 28,000 Rs. </span>
+			      	</div>		      
+			      </div>
+			      
+			      <hr/>  
+			      <footer class="blockquote-footer">Request Submitted on 12/04/2022</footer>
+	   
+			  </div>
+			</div> 
+			            
+            
+            
            
            
         </div>
