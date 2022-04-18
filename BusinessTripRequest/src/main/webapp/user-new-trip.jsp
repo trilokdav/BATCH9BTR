@@ -105,10 +105,11 @@
             </nav>
 
             <h3>Create new trip request</h3>
-            <div class="line"></div>
+           	<hr/>
 
             <form>
-
+			 <div class="card shadow  mb-5  rounded m-4" style="background:linen;">
+             <div class="card-body">
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-3 col-sm-12 text-center">
@@ -237,7 +238,8 @@
                     </div>
                 </div>
 
-
+				</div>
+				</div>
             </form>
 
             <!-- <div class="form-group">
