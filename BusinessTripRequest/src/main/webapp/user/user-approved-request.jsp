@@ -9,9 +9,9 @@
     <title>Approved Request</title>
 
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="css/sidebar-style.css">
+    <link rel="stylesheet" href="../css/sidebar-style.css">
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
@@ -70,7 +70,7 @@
                     <a href="user-trip-history.jsp">Trip History</a>
                 </li>
                 <li>
-                    <a href="index.jsp">Logout</a>
+                    <a href="../index.jsp">Logout</a>
                 </li>
             </ul>
 
@@ -105,12 +105,11 @@
 
             
            
-
-            <div class="line"></div>
+           
             <h3>All approved requests</h3>
  			<hr/>
  			
- 			<div class="card shadow  mb-5  rounded">
+ 			<div class="card shadow  mb-5 m-4 rounded">
 			  <div class="card-header text-light" style="background: linear-gradient(to right, #754edd, #e2114f);">
 			   <div class="row">
 				  <div class="col-md-9 col-sm-12 col-xl-9 ">
@@ -164,7 +163,7 @@
 			</div> 
 			
 			
-			<div class="card shadow  mb-5  rounded">
+			<div class="card shadow  mb-5 m-4 rounded">
 			  <div class="card-header text-light" style="background: linear-gradient(to right, #754edd, #e2114f);">
 			   <div class="row">
 				  <div class="col-md-9 col-sm-12 col-xl-9 ">

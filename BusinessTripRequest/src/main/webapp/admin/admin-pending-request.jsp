@@ -6,19 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Pending Requests</title>
+    <title>Admin Dashboard</title>
 
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="css/sidebar-style.css">
+    <link rel="stylesheet" href="../css/sidebar-style.css">
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
         
-    <style type="text/css">
-   
-    </style>
+    <style>
+    .gradient {
+      background-image: linear-gradient(to right, #754edd, #e2114f);
+    }
+ 	</style>
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -44,7 +46,7 @@
             </div>
 
             <ul class="list-unstyled components">
-                <p>Trilok Sharma</p>
+                <p>Soumyadeep Sinha</p>
                 
                     <!-- <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
                       <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -58,23 +60,21 @@
                             <a href="#">Home 3</a>
                         </li> 
                     </ul>-->
-                <li>    
-                	<a href="user-personal-detail.jsp">Personal Details</a>
+                
+                <li>
+                    <a  href="admin-new-trip.jsp">New Trip Request</a>
                 </li>
                 <li>
-                    <a href="user-new-trip.jsp">New Trip Request</a>
-                </li>
-                <li class="active">
-                    <a href="user-pending-request.jsp">Pending Request</a>
+                    <a class="active" href="admin-pending-request.jsp">Pending Request</a>
                 </li>
                 <li>
-                    <a href="user-approved-request.jsp">Approved Request</a>
+                    <a href="admin-approved-request.jsp">All Approved Request</a>
                 </li>
                 <li>
-                    <a href="user-trip-history.jsp">Trip History</a>
+                    <a href="#">Find Employee</a>
                 </li>
                 <li>
-                    <a href="index.jsp">Logout</a>
+                    <a href="../index.jsp">Logout</a>
                 </li>
             </ul>
 
@@ -108,13 +108,11 @@
             </nav>
 
             
-           
-
-            <div class="line"></div> 
+            
             <h3>All pending requests</h3>
             <hr/>
             
-			<div class="card shadow  mb-5  rounded">
+			<div class="card shadow mb-5 m-4   rounded">
 			  <div class="card-header text-light" style="background: linear-gradient(to right, #754edd, #e2114f);">
 			   <div class="row">
 				  <div class="col-md-9 col-sm-12 col-xl-9 ">
@@ -163,13 +161,25 @@
 			      </div>
 			
 			      <hr/> 
-			      <footer class="blockquote-footer">Request Submitted on 12/04/2022</footer>
-	   
+			      <div class="row">
+			      	<div class="col-md-8 col-sm-6 col-xl-8">
+			      		<footer class="blockquote-footer">Request Submitted on 12/04/2022</footer>
+			      	</div>
+			      	
+			      	<div class="col-md-2 col-sm-4 col-xl-2 p-1">
+			      		<button type="submit" class="btn btn-success btn-block">Accept</button>
+			      	</div>
+			      	
+			      	<div class="col-md-2 col-sm-4 col-xl-2 p-1">
+			      		<button type="submit" class="btn btn-danger btn-block" id="reject" data-toggle="modal" data-target="#reject-modal">Reject</button>
+			      	</div>
+			      </div>
+
 			  </div>
 			</div> 
 			
 			
-			<div class="card shadow  mb-5  rounded">
+			<div class="card shadow mb-5 m-4   rounded">
 			  <div class="card-header text-light" style="background: linear-gradient(to right, #754edd, #e2114f);">
 			   <div class="row">
 				  <div class="col-md-9 col-sm-12 col-xl-9 ">
@@ -214,15 +224,63 @@
 			      	
 			      	<div class="col-md-3 col-sm-3 col-xl-3 text-center">
 			      	<span> Estimated Cost: 28,000 Rs. </span>
-			      	</div>		      
+			      	</div>	      			      
 			      </div>
-			      
-			      <hr/>  
-			      <footer class="blockquote-footer">Request Submitted on 12/04/2022</footer>
-	   
+			
+			      <hr/> 
+			      <div class="row">
+			      	<div class="col-md-8 col-sm-6 col-xl-8">
+			      		<footer class="blockquote-footer">Request Submitted on 12/04/2022</footer>
+			      	</div>
+			      	
+			      	<div class="col-md-2 col-sm-4 col-xl-2 p-1">
+			      		<button type="submit" class="btn btn-success btn-block">Accept</button>
+			      	</div>
+			      	
+			      	<div class="col-md-2 col-sm-4 col-xl-2 p-1">
+			      		<button type="submit" class="btn btn-danger btn-block" id="reject" data-toggle="modal" data-target="#reject-modal">Reject</button>
+			      	</div>
+			      </div>
+
 			  </div>
-			</div> 
-			            
+			</div>
+			
+			
+			
+			
+			
+		<!-- Reject Modal -->
+
+	      <div class="modal fade" id="reject-modal" tabindex="-1" role="dialog">
+	        <div class="modal-dialog modal-dialog-centered" role="document">
+	          <div class="modal-content">
+	            <div class="modal-header gradient">
+	              <h5 class="modal-title text-white">Delete Confirmation!</h5>
+	              <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+	                <span aria-hidden="true">&times;</span>
+	              </button>
+	            </div>
+	
+	            <form method="POST" action="">
+	              <div class="modal-body">
+	                <div class="row">
+	                  <div class="col-12">
+	                    <h5 class="danger" style="color:red;">Are you sure you want to reject this request?</h5>
+	                  </div>
+	                </div>
+	              </div>
+	
+	              <div class="modal-footer">
+	                <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+	                <button type="button" class="btn btn-danger">Yes</button>
+	              </div>
+	
+	            </form>
+	          </div>
+	        </div>
+	      </div>
+
+      <!-- Reject Modal End -->     
             
             
            

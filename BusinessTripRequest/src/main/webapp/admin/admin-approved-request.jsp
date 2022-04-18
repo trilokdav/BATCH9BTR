@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Approved Request</title>
+    <title>All approved requests</title>
 
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="css/sidebar-style.css">
+    <link rel="stylesheet" href="../css/sidebar-style.css">
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
@@ -40,7 +40,7 @@
             </div>
 
             <ul class="list-unstyled components">
-                <p>Trilok Sharma</p>
+                <p>Soumyadeep Sinha</p>
                 
                     <!-- <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
                       <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -54,23 +54,21 @@
                             <a href="#">Home 3</a>
                         </li> 
                     </ul>-->
-                <li>    
-                	<a href="user-personal-detail.jsp">Personal Details</a>
+                
+                <li>
+                    <a href="admin-new-trip.jsp">New Trip Request</a>
                 </li>
                 <li>
-                    <a href="user-new-trip.jsp">New Trip Request</a>
+                    <a href="admin-pending-request.jsp">Pending Request</a>
                 </li>
                 <li>
-                    <a href="user-pending-request.jsp">Pending Request</a>
-                </li>
-                <li class="active">
-                    <a href="user-approved-request.jsp">Approved Request</a>
+                    <a class="active" href="admin-approved-request.jsp">All Approved Request</a>
                 </li>
                 <li>
-                    <a href="user-trip-history.jsp">Trip History</a>
+                    <a href="#">Find Employee</a>
                 </li>
                 <li>
-                    <a href="index.jsp">Logout</a>
+                    <a href="../index.jsp">Logout</a>
                 </li>
             </ul>
 
@@ -105,12 +103,11 @@
 
             
            
-
-            <div class="line"></div>
+           
             <h3>All approved requests</h3>
  			<hr/>
  			
- 			<div class="card shadow  mb-5  rounded">
+ 			<div class="card shadow  mb-5 m-4 rounded">
 			  <div class="card-header text-light" style="background: linear-gradient(to right, #754edd, #e2114f);">
 			   <div class="row">
 				  <div class="col-md-9 col-sm-12 col-xl-9 ">
@@ -159,12 +156,12 @@
 			      </div>
 			
 			      <hr/> 
-			      <footer class="blockquote-footer">Request Approved By Soumyadeep Sinha on 12/04/2022 </footer>
+			      <footer class="blockquote-footer">Request Approved By You On 12/04/2022 </footer>
 			  </div>
 			</div> 
 			
 			
-			<div class="card shadow  mb-5  rounded">
+			<div class="card shadow  mb-5 m-4 rounded">
 			  <div class="card-header text-light" style="background: linear-gradient(to right, #754edd, #e2114f);">
 			   <div class="row">
 				  <div class="col-md-9 col-sm-12 col-xl-9 ">
@@ -213,7 +210,7 @@
 			      </div>
 			
 			      <hr/> 
-			      <footer class="blockquote-footer">Request Approved By Soumyadeep Sinha on 12/04/2022 </footer>
+			      <footer class="blockquote-footer">Request Approved By You On 12/04/2022 </footer>
 			  </div>
 			</div> 
  			

@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Personal Details</title>
+    <title>Admin Dashboard</title>
 
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="css/sidebar-style.css">
+    <link rel="stylesheet" href="../css/sidebar-style.css">
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
@@ -40,7 +40,7 @@
             </div>
 
             <ul class="list-unstyled components">
-                <p>Trilok Sharma</p>
+                <p>Soumyadeep Sinha</p>
                 
                     <!-- <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
                       <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -54,33 +54,32 @@
                             <a href="#">Home 3</a>
                         </li> 
                     </ul>-->
-                <li class="active">    
-                	<a href="user-personal-detail.jsp">Personal Details</a>
+                
+                <li>
+                    <a class="active" href="admin-new-trip.jsp">New Trip Request</a>
                 </li>
                 <li>
-                    <a href="user-new-trip.jsp">New Trip Request</a>
+                    <a href="admin-pending-request.jsp">Pending Request</a>
                 </li>
                 <li>
-                    <a href="user-pending-request.jsp">Pending Request</a>
+                    <a href="admin-approved-request.jsp">All Approved Request</a>
                 </li>
                 <li>
-                    <a href="user-approved-request.jsp">Approved Request</a>
+                    <a href="#">Find Employee</a>
                 </li>
                 <li>
-                    <a href="user-trip-history.jsp">Trip History</a>
-                </li>
-                <li>
-                    <a href="index.jsp">Logout</a>
+                    <a href="../index.jsp">Logout</a>
                 </li>
             </ul>
 
-            
+
         </nav>
 
         <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar bg-light text-white" style="background: linear-gradient(to right, #754edd, #e2114f);">
+            <nav class="navbar navbar-expand-lg navbar bg-light text-white"
+                style="background: linear-gradient(to right, #754edd, #e2114f);">
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn btn-info">
@@ -96,174 +95,169 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <h3 class="nav-link">Personal Details</h3>
+                                <h3 class="nav-link">New Trip Request</h3>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
 
-            
-           
-             
-            <h3>My Data</h3>
+            <h3>Create new trip request</h3>
            	<hr/>
-           	
-           	 
-             <form>
-             <div class="card shadow  mb-5  rounded m-4"  style="background:linen;">
+
+            <form>
+			 <div class="card shadow  mb-5  rounded m-4" style="background:linen;">
              <div class="card-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="purpose">Travel Purpose</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <select name="purpose" id="purpose" class="form-control border border-primary">
+                                <option value="#">-- Select --</option>
+                                <option value="Project2">project 2</option>
+                                <option value="Project3">project 3</option>
+                                <option value="Project4">project 4</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="dcountry">Departing country</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="dcountry" class="form-control border border-primary" id="dcountry">
+                        </div>
+                    </div>
+                </div>
 
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-md-2 col-sm-12 text-center">
-                            <label for="fname">First Name: </label>
-                        </div>
-                        <div class="col-md-2 col-sm-12">
-                            <input type="text" name="fname" class="form-control border border-primary" id="fname" value="Trilok" readonly >
-                        </div>
-                        
-                        <div class="col-md-2 col-sm-12 text-center">
-                            <label for="mname">Middle Name: </label>
-                        </div>
-                        <div class="col-md-2 col-sm-12">
-                            <input type="text" name="mname" class="form-control border border-primary" id="mname"  readonly >
-                        </div>
-
-                        <div class="col-md-2 col-sm-12 text-center">
-                            <label for="lname">Last Name: </label>
-                        </div>
-                        <div class="col-md-2 col-sm-12">
-                            <input type="text" name="lname" class="form-control border border-primary" id="lname" value="Sharma" readonly>
-                        </div>
-                    </div>
-                 </div>
-                    
-                 <div class="form-group">
-                    <div class="row">
                         <div class="col-md-3 col-sm-12 text-center">
-                            <label for="eno">Employee No: </label>
+                            <label for="ddate">Departure date</label>
                         </div>
                         <div class="col-md-3 col-sm-12">
-                            <input type="text" name="eno" class="form-control border border-primary" id="eno" value="1521" readonly >
+                            <input type="date" name="ddate" class="form-control border border-primary" id="ddate">
                         </div>
 
                         <div class="col-md-3 col-sm-12 text-center">
-                            <label for="email">Email ID: </label>
+                            <label for="rdate">Return date</label>
                         </div>
                         <div class="col-md-3 col-sm-12">
-                            <input type="text" name="Email" class="form-control border border-primary" id="Email" value="Strilok4031@gmail.com" readonly>
+                            <input type="date" name="rdate" class="form-control border border-primary" id="rdate">
                         </div>
                     </div>
-                  </div>
-                  
-                  
-                  <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-12 text-center">
-                            <label for="mno">Mobile No: </label>
-                        </div>
-                        <div class="col-md-3 col-sm-12">
-                            <input type="text" name="mno" class="form-control border border-primary" id="mno" value="7227878767" readonly >
-                        </div>
-
-                        <div class="col-md-3 col-sm-12 text-center">
-                            <label for="dob">Date Of Birth: </label>
-                        </div>
-                        <div class="col-md-3 col-sm-12">
-                            <input type="text" name="dob" class="form-control border border-primary" id="dob" value="06/09/1999" readonly>
-                        </div>
-                    </div>
-                  </div>
-                  
-                  
-                  <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-12 text-center">
-                            <label for="gender">Gender: </label>
-                        </div>
-                        <div class="col-md-3 col-sm-12">
-                            <input type="text" name="gender" class="form-control border border-primary" id="gender" value="Male" readonly >
-                        </div>
-
-                        <div class="col-md-3 col-sm-12 text-center">
-                            <label for="doj">Date Of Joining: </label>
-                        </div>
-                        <div class="col-md-3 col-sm-12">
-                            <input type="text" name="doj" class="form-control border border-primary" id="doj" value="17/02/2022" readonly>
-                        </div>
-                    </div>
-                  </div>
-                  
-                  
-                  <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-12 text-center">
-                            <label for="addr">Address: </label>
-                        </div>
-                        <div class="col-md-3 col-sm-12">
-                            <input type="text" name="addr" class="form-control border border-primary" id="addr" value="b-2 surel appartments" readonly >
-                        </div>
-
-                        <div class="col-md-3 col-sm-12 text-center">
-                            <label for="city">City: </label>
-                        </div>
-                        <div class="col-md-3 col-sm-12">
-                            <input type="text" name="city" class="form-control border border-primary" id="city" value="Ahmedabad" readonly>
-                        </div>
-                    </div>
-                  </div>
-                  
-                  
-                  <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-12 text-center">
-                            <label for="cont">Country: </label>
-                        </div>
-                        <div class="col-md-3 col-sm-12">
-                            <input type="text" name="cont" class="form-control border border-primary" id="cont" value="India" readonly >
-                        </div>
-
-                        <div class="col-md-3 col-sm-12 text-center">
-                            <label for="national">Nationality: </label>
-                        </div>
-                        <div class="col-md-3 col-sm-12">
-                            <input type="text" name="national" class="form-control border border-primary" id="national" value="Indian" readonly>
-                        </div>
-                    </div>
-                  </div>
-                  
-                  
-                  <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-12 text-center">
-                            <label for="dept">Department: </label>
-                        </div>
-                        <div class="col-md-3 col-sm-12">
-                            <input type="text" name="dept" class="form-control border border-primary" id="dept" value="Tech ERP" readonly >
-                        </div>
-
-                        <div class="col-md-3 col-sm-12 text-center">
-                            <label for="pno">Passport No: </label>
-                        </div>
-                        <div class="col-md-3 col-sm-12">
-                            <input type="text" name="pno" class="form-control border border-primary" id="pno" value="31195855" readonly>
-                        </div>
-                    </div>
-                  </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                
-                
                 </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="ecost">Estimated cost</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="number" name="ecost" class="form-control border border-primary" id="ecost">
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="advance">Advance amount</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="number" name="advance" class="form-control border border-primary" id="advance">
+                        </div>
+                    </div>
                 </div>
-              </form>
-           
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="d_addr">Destination address</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="d_addr" class="form-control border border-primary" id="d_addr"
+                                placeholder="Address line 1, Street name">
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="dcity">Destination City</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="dcity" class="form-control border border-primary" id="dcity">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="dcountry">Destination Country</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="dcountry" class="form-control border border-primary" id="dcountry">
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="postal">Postal code</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="postal" class="form-control border border-primary" id="postal">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="accomodation">Acomodation required?</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <select name="accomodation" id="Accomodation" class="form-control border border-primary">
+                                <option value="no">No</option>
+                                <option value="yes">Yes</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="currency">Currency</label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="currency" class="form-control border border-primary" id="currency">
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xl-6 text-right">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 col-xl-6 text-left">
+                        <button type="reset" class="btn btn-danger">Reset</button>
+                    </div>
+                </div>
+
+				</div>
+				</div>
+            </form>
+
+            <!-- <div class="form-group">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 text-center">
+                        <label for="dcountry">Destination Country</label>
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                        <input type="text" name="dcountry" class="form-control border border-primary" id="dcountry">
+                    </div>
+
+                    <div class="col-md-3 col-sm-12 text-center">
+                        <label for="postal">Postal code</label>
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                        <input type="text" name="postal" class="form-control border border-primary" id="pstal">
+                    </div>
+                </div>
+            </div> -->
+
         </div>
     </div>
 
