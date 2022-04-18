@@ -1,0 +1,7 @@
+0:0:0:0:0:0:0:1 - - [18/Apr/2022:00:15:40 +0530] "GET /BusinessTripRequest/user-approved-request.jsp HTTP/1.1" 200 7937
+0:0:0:0:0:0:0:1 - - [18/Apr/2022:00:15:41 +0530] "GET /BusinessTripRequest/css/bootstrap.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [18/Apr/2022:00:16:57 +0530] "GET /BusinessTripRequest/user-approved-request.jsp HTTP/1.1" 200 7941
+0:0:0:0:0:0:0:1 - - [18/Apr/2022:00:17:18 +0530] "GET /BusinessTripRequest/user-new-trip.jsp HTTP/1.1" 200 13303
+0:0:0:0:0:0:0:1 - - [18/Apr/2022:00:17:25 +0530] "GET /BusinessTripRequest/user-pending-request.jsp HTTP/1.1" 200 9975
+0:0:0:0:0:0:0:1 - - [18/Apr/2022:00:17:31 +0530] "GET /BusinessTripRequest/user-approved-request.jsp HTTP/1.1" 200 7941
+0:0:0:0:0:0:0:1 - - [18/Apr/2022:00:18:32 +0530] "GET /BusinessTripRequest/user-approved-request.jsp HTTP/1.1" 200 9901
