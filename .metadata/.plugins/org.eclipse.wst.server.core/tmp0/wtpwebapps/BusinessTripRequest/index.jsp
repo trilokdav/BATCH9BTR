@@ -24,7 +24,7 @@
       </div>
       <!-- <a href="#"><span></span>Submit</a> -->
 
-     <button><a href="user-dash.jsp" style="text-decoration:none; color:white; font-size:14px;">submit</a></button>
+     <button><a href="user/user-personal-detail.jsp" style="text-decoration:none; color:white; font-size:14px;">submit</a></button>
     </form>
   </div>
 </body>
