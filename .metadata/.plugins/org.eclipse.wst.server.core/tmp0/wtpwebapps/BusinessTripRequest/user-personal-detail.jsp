@@ -105,11 +105,164 @@
 
             
            
-
-            <div class="line"></div>
-
+             
             <h3>My Data</h3>
-           
+           	<hr/>
+           	
+           	 
+             <form>
+             <div class="card shadow  mb-5  rounded m-4"  style="background:linen;">
+             <div class="card-body">
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12 text-center">
+                            <label for="fname">First Name: </label>
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <input type="text" name="fname" class="form-control border border-primary" id="fname" value="Trilok" readonly >
+                        </div>
+                        
+                        <div class="col-md-2 col-sm-12 text-center">
+                            <label for="mname">Middle Name: </label>
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <input type="text" name="mname" class="form-control border border-primary" id="mname"  readonly >
+                        </div>
+
+                        <div class="col-md-2 col-sm-12 text-center">
+                            <label for="lname">Last Name: </label>
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <input type="text" name="lname" class="form-control border border-primary" id="lname" value="Sharma" readonly>
+                        </div>
+                    </div>
+                 </div>
+                    
+                 <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="eno">Employee No: </label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="eno" class="form-control border border-primary" id="eno" value="1521" readonly >
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="email">Email ID: </label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="Email" class="form-control border border-primary" id="Email" value="Strilok4031@gmail.com" readonly>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="mno">Mobile No: </label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="mno" class="form-control border border-primary" id="mno" value="7227878767" readonly >
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="dob">Date Of Birth: </label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="dob" class="form-control border border-primary" id="dob" value="06/09/1999" readonly>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="gender">Gender: </label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="gender" class="form-control border border-primary" id="gender" value="Male" readonly >
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="doj">Date Of Joining: </label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="doj" class="form-control border border-primary" id="doj" value="17/02/2022" readonly>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="addr">Address: </label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="addr" class="form-control border border-primary" id="addr" value="b-2 surel appartments" readonly >
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="city">City: </label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="city" class="form-control border border-primary" id="city" value="Ahmedabad" readonly>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="cont">Country: </label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="cont" class="form-control border border-primary" id="cont" value="India" readonly >
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="national">Nationality: </label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="national" class="form-control border border-primary" id="national" value="Indian" readonly>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="dept">Department: </label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="dept" class="form-control border border-primary" id="dept" value="Tech ERP" readonly >
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <label for="pno">Passport No: </label>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <input type="text" name="pno" class="form-control border border-primary" id="pno" value="31195855" readonly>
+                        </div>
+                    </div>
+                  </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                
+                </div>
+                </div>
+              </form>
            
         </div>
     </div>
