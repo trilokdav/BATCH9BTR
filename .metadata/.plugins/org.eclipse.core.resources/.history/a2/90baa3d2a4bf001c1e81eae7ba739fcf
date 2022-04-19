@@ -1,0 +1,45 @@
+<%@ page language="java" import="java.sql.ResultSet" import="java.sql.Statement" import="java.sql.Connection" import="java.sql.DriverManager" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+<% 
+	String fname = request.getParameter("email");
+    String mname = request.getParameter("email");
+    String lname = request.getParameter("email");
+    String empno = request.getParameter("email");
+    String email = request.getParameter("email");
+    String mob = request.getParameter("email");
+    String dob = request.getParameter("email");
+    String gender = request.getParameter("email");
+    String doj = request.getParameter("email");
+	String address = request.getParameter("password");
+	String city = request.getParameter("email");
+	String country = request.getParameter("email");
+	String pc = request.getParameter("email");
+	String dp = request.getParameter("email");
+	String nation = request.getParameter("email");
+	String passno = request.getParameter("email");
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+	Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","sys as sysdba","root");
+	Statement st = con.createStatement();
+	ResultSet rs;
+	rs = st.executeQuery("select * from BATCH9BTR_USER_DETAILS where email_id='"+ email +"' and password='"+ password +"'");
+	out.println(rs);
+	if(rs.next())
+	{
+		session.setAttribute("email", email);
+		response.sendRedirect("user/user-personal-detail.jsp");
+	}
+	else
+	{
+		response.sendRedirect("index.jsp");
+	}
+	con.close();  
+%>
+</body>
+</html>
