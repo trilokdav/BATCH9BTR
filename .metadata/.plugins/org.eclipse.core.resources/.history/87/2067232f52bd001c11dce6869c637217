@@ -1,9 +1,0 @@
-<! Doctype html>
-<html>
-<body>
-<h2>Hello World!</h2>
-<a href="login.jsp">Click here to login</a>
-<a href="user_dashboard.jsp">Click here to user dashboard</a>
-<a href="admin_dashboard.jsp">Click here to admin dashboard</a>
-</body>
-</html>

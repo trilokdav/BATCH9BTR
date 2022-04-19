@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 
@@ -6,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Approved Request</title>
+    <title>User Dashboard</title>
 
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="../css/sidebar-style.css">
+    <link rel="stylesheet" href="css/sidebar-style.css">
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
@@ -54,7 +55,7 @@
                             <a href="#">Home 3</a>
                         </li> 
                     </ul>-->
-                <li>    
+                <li class="active">    
                 	<a href="user-personal-detail.jsp">Personal Details</a>
                 </li>
                 <li>
@@ -63,14 +64,14 @@
                 <li>
                     <a href="user-pending-request.jsp">Pending Request</a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="user-approved-request.jsp">Approved Request</a>
                 </li>
                 <li>
                     <a href="user-trip-history.jsp">Trip History</a>
                 </li>
                 <li>
-                    <a href="../index.jsp">Logout</a>
+                   <a href="<%=request.getContextPath()%>/LogoutServlet">Logout</a>
                 </li>
             </ul>
 
@@ -96,7 +97,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <h3 class="nav-link">Approved Request</h3>
+                                <h3 class="nav-link">Personal Information</h3>
                             </li>
                         </ul>
                     </div>
@@ -105,118 +106,20 @@
 
             
            
+
+            <div class="line"></div>
+
+            <h2>Lorem Ipsum Dolor</h2>
            
-            <h3>All approved requests</h3>
- 			<hr/>
- 			
- 			<div class="card shadow  mb-5 m-4 rounded">
-			  <div class="card-header text-light" style="background: linear-gradient(to right, #754edd, #e2114f);">
-			   <div class="row">
-				  <div class="col-md-9 col-sm-12 col-xl-9 ">
-				  <h4>Trip No. 1121</h4>
-				  </div>
-				  <div class="col-md-3 col-sm-12 col-xl-3 p-1 d-flex justify-content-center">
-				  <span class="badge badge-pill badge-success p-2" style="font-size: 16px;">Application Approved</span>
-				  </div>
-				</div>
-				</div>
-			  <div class="card-body" style="background:linen;">		    
-			      <div class="row">
-			      	<div class="col-md-4 col-sm-4 col-xl-4 bg-light text-center">
-			      	<span> Depart date: 18/04/2022 </span>
-			      	</div>
-			      	
-			      	<div class="col-md-4 col-sm-4 col-xl-4  text-center">
-			      	<span> Return date: 25/04/2022 </span>
-			      	</div>
-			      	
-			      	<div class="col-md-4 col-sm-4 col-xl-4 bg-light text-center">
-			      	<span> Destination Country: Russia </span>
-			      	</div>			      
-			      </div>
-			      
-			      <br/>
-			      
-			       <div class="row">
-			       
-			        <div class="col-md-3 col-sm-3 col-xl-3 bg-light text-center">
-			      	<span> Departure Country: India </span>
-			      	</div>
-			      	
-			      	
-			      	<div class="col-md-3 col-sm-3 col-xl-3  text-center">
-			      	<span> Accommodation Required: Yes </span>
-			      	</div>
-			      	
-			      	<div class="col-md-3 col-sm-3 col-xl-3 bg-light text-center">
-			      	<span> Advance Amount: 15,000 Rs. </span>
-			      	</div>
-			      	
-			      	<div class="col-md-3 col-sm-3 col-xl-3 text-center">
-			      	<span> Estimated Cost: 28,000 Rs. </span>
-			      	</div>	      			      
-			      </div>
-			
-			      <hr/> 
-			      <footer class="blockquote-footer">Request Approved By Soumyadeep Sinha on 12/04/2022 </footer>
-			  </div>
-			</div> 
-			
-			
-			<div class="card shadow  mb-5 m-4 rounded">
-			  <div class="card-header text-light" style="background: linear-gradient(to right, #754edd, #e2114f);">
-			   <div class="row">
-				  <div class="col-md-9 col-sm-12 col-xl-9 ">
-				  <h4>Trip No. 1121</h4>
-				  </div>
-				  <div class="col-md-3 col-sm-12 col-xl-3 p-1 d-flex justify-content-center">
-				  <span class="badge badge-pill badge-success p-2" style="font-size: 16px;">Application Approved</span>
-				  </div>
-				</div>
-				</div>
-			  <div class="card-body" style="background:linen;">		    
-			      <div class="row">
-			      	<div class="col-md-4 col-sm-4 col-xl-4 bg-light text-center">
-			      	<span> Depart date: 18/04/2022 </span>
-			      	</div>
-			      	
-			      	<div class="col-md-4 col-sm-4 col-xl-4  text-center">
-			      	<span> Return date: 25/04/2022 </span>
-			      	</div>
-			      	
-			      	<div class="col-md-4 col-sm-4 col-xl-4 bg-light text-center">
-			      	<span> Destination Country: Russia </span>
-			      	</div>			      
-			      </div>
-			      
-			      <br/>
-			      
-			       <div class="row">
-			       
-			        <div class="col-md-3 col-sm-3 col-xl-3 bg-light text-center">
-			      	<span> Departure Country: India </span>
-			      	</div>
-			      	
-			      	
-			      	<div class="col-md-3 col-sm-3 col-xl-3  text-center">
-			      	<span> Accommodation Required: Yes </span>
-			      	</div>
-			      	
-			      	<div class="col-md-3 col-sm-3 col-xl-3 bg-light text-center">
-			      	<span> Advance Amount: 15,000 Rs. </span>
-			      	</div>
-			      	
-			      	<div class="col-md-3 col-sm-3 col-xl-3 text-center">
-			      	<span> Estimated Cost: 28,000 Rs. </span>
-			      	</div>	      			      
-			      </div>
-			
-			      <hr/> 
-			      <footer class="blockquote-footer">Request Approved By Soumyadeep Sinha on 12/04/2022 </footer>
-			  </div>
-			</div> 
- 			
- 			          
+
+            <div class="line"></div>
+
+            <h2>Lorem Ipsum Dolor</h2>
+          
+
+            <div class="line"></div>
+
+            <h3>Lorem Ipsum Dolor</h3>
            
         </div>
     </div>
