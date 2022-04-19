@@ -1,0 +1,41 @@
+package com.login.util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DBConnection 
+{
+	public static void createConnection()
+	{
+	 //Connection con = null;
+     String url = "jdbc:oracle:thin:@//132.145.42.131:1521/Testdb_pdb1.evopaassub1.evopaasvcn.oraclevcn.com";
+     String username = "trainee_schema";
+     String password = "Trn__Schema_21";
+    try
+    {
+        try
+        {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+        }
+        catch (ClassNotFoundException e)
+        {
+        	System.out.println(e);
+            //e.printStackTrace();
+        }
+        Connection con = DriverManager.getConnection(url, username, password);
+        System.out.println("Post establishing a DB connection - "+con);
+    }
+    catch (SQLException e)
+        {
+           System.out.println("An error occurred. Maybe user/password is invalid");
+         e.printStackTrace();
+       }
+    //return con;
+	
+	}
+	
+	public static void main(String args[]) {
+		createConnection();
+	}
+}

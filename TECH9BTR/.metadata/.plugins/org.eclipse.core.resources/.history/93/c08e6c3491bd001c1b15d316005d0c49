@@ -1,0 +1,97 @@
+package database;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.*;
+
+import javax.servlet.RequestDispatcher;
+
+import bean.LoginBean;
+
+public class LoginDao 
+{
+	public boolean validate(LoginBean loginBean) throws ClassNotFoundException {
+        boolean status = false;
+
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project_ajt","root","");
+                     
+        Statement s1=cn.createStatement();
+        
+        
+        String input_user=request.getParameter("g1");
+        String input_shopkeeper=request.getParameter("g1");
+        
+        String name=request.getParameter("email");
+        String password=request.getParameter("password");
+        
+        System.out.println(input_user);
+        System.out.println(input_shopkeeper);
+        
+       if(input_user.equals("user"))
+        {
+             //System.out.println("hello" + input_user);
+             
+        String q1="select u_email,u_password from user_reg";
+        ResultSet r=s1.executeQuery(q1);
+        
+        while(r.next())
+             {
+                 String uname=r.getString(1);
+                 String upassword=r.getString(2);
+                 System.out.println(uname);
+                 System.out.println(upassword);
+                
+                 if(name.equalsIgnoreCase(uname) && password.equalsIgnoreCase(upassword))
+                 {
+                       RequestDispatcher disp=request.getRequestDispatcher("index.jsp");
+                       disp.forward(request, response);
+                 }
+                 else
+                 {
+                   
+                     response.sendRedirect("error.jsp");
+                 }
+                 
+             }
+        }
+       else if(input_shopkeeper.equals("shopk"))
+       {
+         
+           
+        System.out.println("hello" + input_shopkeeper);
+           
+                
+        String q1="select shopkeeper_email,shopkeeper_password from shop_keeper_details";
+        ResultSet r=s1.executeQuery(q1);
+        
+        while(r.next())
+             {
+                 String uname=r.getString(1);
+                 String upassword=r.getString(2);
+                 System.out.println(uname);
+                 System.out.println(upassword);
+                
+                 if(name.equalsIgnoreCase(uname) && password.equalsIgnoreCase(upassword))
+                 {
+                       RequestDispatcher disp=request.getRequestDispatcher("index.jsp");
+                       disp.forward(request, response);
+                 }
+                 else
+                 {
+                     response.sendRedirect("error.jsp");
+                    
+                 }
+                 
+             }
+           
+       }
+       else
+       {
+           System.out.println("NULL");
+       }
+}

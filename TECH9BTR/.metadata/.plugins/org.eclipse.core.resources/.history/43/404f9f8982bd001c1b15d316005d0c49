@@ -1,0 +1,10 @@
+package bean;
+
+public class LoginBean 
+{
+	private String emailid;
+	private String password;
+	
+	
+	
+}

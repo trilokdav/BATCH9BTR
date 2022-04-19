@@ -1,0 +1,51 @@
+package com.login.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.login.bean.LoginBean;
+import com.login.util.DBConnection;
+
+public class LoginDao 
+{
+	public String authenticateUser(LoginBean loginBean)
+	{
+	    String userName = loginBean.getEmail_id();
+	    String password = loginBean.getPassword();
+	 
+	    Connection con = null;
+	    Statement statement = null;
+	    ResultSet resultSet = null;
+	 
+	    String emailIDDB = "";
+	    String passwordDB = "";
+	    String roleDB = "";
+	 
+	    try
+	    {
+	        con = DBConnection.createConnection();
+	        statement = con.createStatement();
+	        resultSet = statement.executeQuery("select EMAIL_ID, PASSWORD,ROLE from BATCH9BTR_USER_DETAILS d JOIN BATCH9BTR_USER_TYPE_MST m ON d.user_type_id=m.user_type_id ");
+	        while(resultSet.next())
+	        {
+	            emailIDDB = resultSet.getString("email_id");
+	            passwordDB = resultSet.getString("password");
+	            roleDB = resultSet.getString("role");
+	 
+	            if(email_id.equals(emailIDDB) && password.equals(passwordDB) && roleDB.equals("Admin"))
+	            return "Admin_Role";
+	            else if(userName.equals(emailIDDB) && password.equals(passwordDB) && roleDB.equals("Editor"))
+	            return "Editor_Role";
+	            else if(userName.equals(emailIDDB) && password.equals(passwordDB) && roleDB.equals("User"))
+	            return "User_Role";
+	        }
+	    }
+	    catch(SQLException e)
+	    {
+	        e.printStackTrace();
+	    }
+	    return "Invalid user credentials";
+	}
+}

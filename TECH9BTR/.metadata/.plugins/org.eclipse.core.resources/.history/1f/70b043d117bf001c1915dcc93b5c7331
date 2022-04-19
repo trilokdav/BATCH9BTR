@@ -1,0 +1,65 @@
+package com.login.util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
+public class DBConnection 
+{
+//	public static Connection createConnection()
+//	{
+//	 Connection con = null;
+//     String url = "jdbc:oracle:thin:sys as sysdba@//localhost:1521/xe";
+//     String username = "sys as sysdba";
+//     String password = "root";
+//    try
+//    {
+//        try
+//        {
+//            Class.forName("oracle.jdbc.driver.OracleDriver");
+//        }
+//        catch (ClassNotFoundException e)
+//        {
+//        	//System.out.println(e);
+//            e.printStackTrace();
+//        }
+//        con = DriverManager.getConnection(url, username, password);
+//        System.out.println("Post establishing a DB connection - "+con);
+//    }
+//    catch (SQLException e)
+//        {
+//           System.out.println("An error occurred. Maybe user/password is invalid");
+//         e.printStackTrace();
+//       }
+//    return con;
+//	
+//	}
+
+		private static final String url = "jdbc:oracle:thin:@//localhost:1521/xe";
+		private static final String user = "sys as sysdba";
+		private static final String password = "root";
+		private static Connection connection;
+
+		
+		private DBConnection() {
+		}
+
+		public static Connection openConnection() throws SQLException {
+			if (connection == null) {
+				connection = DriverManager.getConnection(url, user, password);
+			}
+
+			return connection;
+		}
+
+		public static boolean closeConnection() throws SQLException {
+			if (!connection.isClosed()) {
+				connection.close();
+			}
+			return true;
+		}
+
+	
+	
+}

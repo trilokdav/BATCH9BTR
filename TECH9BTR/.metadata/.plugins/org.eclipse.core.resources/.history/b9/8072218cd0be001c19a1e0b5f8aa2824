@@ -1,0 +1,61 @@
+package com.login.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Driver;
+
+import com.login.bean.LoginBean;
+import com.login.util.DBConnection;
+
+public class LoginDao 
+{
+	public String authenticateUser(LoginBean loginBean)
+	{
+	    String email_id = loginBean.getEmail_id();
+	    String password = loginBean.getPassword();
+	 
+	    Connection con = null;
+	    Statement statement = null;
+	    ResultSet resultSet = null;
+	 
+	    String emailIDDB = "";
+	    String passwordDB = "";
+	    String roleDB = "";
+	 
+	    try
+	    {
+	    	Class driver = Class.forName("oracle.jdbc.driver.OracleDriver");
+			DriverManager.registerDriver((Driver) driver.newInstance());
+			final Connection connection = DBConnection.openConnection();
+			// select * from dept
+			//statement = con.createStatement();
+			final Statement statement1 = connection.createStatement();
+//	        con = DBConnection.createConnection();
+			
+	        resultSet = statement1.executeQuery("select EMAIL_ID, PASSWORD,ROLE from BATCH9BTR_USER_DETAILS d JOIN BATCH9BTR_USER_TYPE_MST m ON d.user_type_id=m.user_type_id ");
+	        while(resultSet.next())
+	        {
+	            emailIDDB = resultSet.getString("email_id");
+	            passwordDB = resultSet.getString("password");
+	            roleDB = resultSet.getString("role");
+	 
+	            if(email_id.equals(emailIDDB) && password.equals(passwordDB) && roleDB.equals("Employee"))
+	            return "Employee_role";
+	            else if(email_id.equals(emailIDDB) && password.equals(passwordDB) && roleDB.equals("L1"))
+	            return "L1_role";
+	            else if(email_id.equals(emailIDDB) && password.equals(passwordDB) && roleDB.equals("L2"))
+	            return "L2_Role";
+	            else if(email_id.equals(emailIDDB) && password.equals(passwordDB) && roleDB.equals("L3"))
+		            return "L3_Role";
+	        }
+	    }
+	    catch(SQLException e)
+	    {
+	        e.printStackTrace();
+	    }
+	    return "Invalid user credentials";
+	}
+}
