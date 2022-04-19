@@ -1,3 +1,5 @@
+<%@ page language="java" import="java.sql.ResultSet" import="java.sql.Statement" import="java.sql.Connection" import="java.sql.DriverManager" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 
@@ -40,7 +42,7 @@
             </div>
 
             <ul class="list-unstyled components">
-                <p>Soumyadeep Sinha</p>
+                <p><%=session.getAttribute("email") %></p>
                 
                     <!-- <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
                       <ul class="collapse list-unstyled" id="homeSubmenu">

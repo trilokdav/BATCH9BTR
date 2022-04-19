@@ -21,6 +21,8 @@
 </head>
 
 <body>
+	<% session.invalidate(); %>
+	
 	<div class="login-box">
     <h2>Login</h2>
     

@@ -1,0 +1,61 @@
+<%@ page language="java" import="java.sql.ResultSet"
+	import="java.sql.Statement" import="java.sql.Connection"
+	import="java.sql.DriverManager"
+	contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+ ResultSet rs = st.executeQuery("select * from reg");
+    int x = 0;
+    while (rs.next()) {
+        if ((rs.getString("username").equals(name)) && rs.getString("password").equals(pass)) {
+            String stp = rs.getString("uType");
+            if (stp.equals("admin")) {
+                x = 1;
+                break;
+            } else {
+                x = 2;
+                break;
+            }
+        }
+    }
+    if (x == 2) {
+        response.sendRedirect("student.jsp");
+    } else if (x == 1) {
+        response.sendRedirect("admin.jsp");
+    } else {
+        out.println("Either you enter Invalid UserName or Password! Please Try Again");
+%>
+        <jsp:include page="index.html" />
+    <%}
+        } catch (Exception e) {
+            out.println(e);
+        }
+        session.setAttribute("username", name);
+    %> 
+<body>
+	 <%
+	String email = request.getParameter("email");
+	String password = request.getParameter("password");
+
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+	Connection con = DriverManager.getConnection("jdbc:oracle:thin:@132.145.42.131:1521/Testdb_pdb1.evopaassub1.evopaasvcn.oraclevcn.com","trainee_schema","Trn__Schema_21");
+	Statement st = con.createStatement();
+	ResultSet rs;
+	rs = st.executeQuery("select * from BATCH9BTR_USER_DETAILS");
+
+	out.println(rs);
+
+	if (rs.next()) {
+		session.setAttribute("email", email);
+		response.sendRedirect("user/user-personal-detail.jsp");
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+	con.close();
+	%>
+</body>
+</html>
