@@ -114,12 +114,13 @@
            	 try 
              {
 					Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
-					Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","sys as sysdba","root");
-					String query = "select * from BATCH9BTR_USER_DETAILS where user_id='2'";
+					Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@132.145.42.131:1521/Testdb_pdb1.evopaassub1.evopaasvcn.oraclevcn.com","trainee_schema","Trn__Schema_21");
+					String query = "select * from BATCH9BTR_USER_DETAILS a INNER JOIN batch9btr_department_mst b ON  a.dept_id=b.dept_id  INNER JOIN batch9btr_nationality_mst c ON  a.nationality_id=c.nationality_id where user_id='1'";
 					Statement st = conn.createStatement();
 					ResultSet rs = st.executeQuery(query);
 					if(rs.next()){
            %>
+         
              <form>
              <div class="card shadow  mb-5  rounded m-4"  style="background:linen;">
              <div class="card-body">
@@ -238,7 +239,7 @@
                             <label for="national">Nationality: </label>
                         </div>
                         <div class="col-md-3 col-sm-12">
-                            <input type="text" name="national" class="form-control border border-primary" id="national" value="Indian" readonly>
+                            <input type="text" name="national" class="form-control border border-primary" id="national" value="<%=rs.getString("nationality_name")%>" readonly>
                         </div>
                     </div>
                   </div>
@@ -250,7 +251,7 @@
                             <label for="dept">Department: </label>
                         </div>
                         <div class="col-md-3 col-sm-12">
-                            <input type="text" name="dept" class="form-control border border-primary" id="dept" value="Tech ERP" readonly >
+                            <input type="text" name="dept" class="form-control border border-primary" id="dept" value="<%=rs.getString("dept_name")%>" readonly >
                         </div>
 
                         <div class="col-md-3 col-sm-12 text-center">

@@ -1,3 +1,5 @@
+<%@ page language="java" import="java.sql.ResultSet" import="java.sql.Statement" import="java.sql.Connection" import="java.sql.DriverManager" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 
@@ -106,7 +108,6 @@
 
             <h3>Create new trip request</h3>
            	<hr/>
-
             <form>
 			 <div class="card shadow  mb-5  rounded m-4" style="background:linen;">
              <div class="card-body">
@@ -118,12 +119,18 @@
                         <div class="col-md-3 col-sm-12">
                             <select name="purpose" id="purpose" class="form-control border border-primary">
                                 <option value="#">-- Select --</option>
-                                <option value="Project2">project 2</option>
-                                <option value="Project3">project 3</option>
-                                <option value="Project4">project 4</option>
+                                <option value="1>">Workshop</option>
+                                <option value="2">Training</option>
+                                <option value="3">Client Visit</option>
+                                <option value="4">Prospect Visit</option>
+                                <option value="5">Corporate Event</option>
+                                <option value="6">Branch Visit</option>
+                                <option value="7">Research</option>
+                                <option value="8">Other</option>
+                                
                             </select>
                         </div>
-
+             
                         <div class="col-md-3 col-sm-12 text-center">
                             <label for="dcountry">Departing country</label>
                         </div>
