@@ -26,8 +26,8 @@
 			    Class.forName("oracle.jdbc.driver.OracleDriver");
 			    connection = DriverManager.getConnection("jdbc:oracle:thin:@132.145.42.131:1521/Testdb_pdb1.evopaassub1.evopaasvcn.oraclevcn.com","trainee_schema","Trn__Schema_21");
 				Statement statement = connection.createStatement();
-				String command = "INSERT into BATCH9BTR_TRIP_DETAILS()values('"+first_name+"','"+last_name+"','"+city_name+"','"+email+"')";
-			    statement.executeUpdate(command);
+				//String command = "INSERT into BATCH9BTR_TRIP_DETAILS()values('"+first_name+"','"+last_name+"','"+city_name+"','"+email+"')";
+			    //statement.executeUpdate(command);
 				out.println("Data is successfully inserted!");
 			}
 			catch(Exception e)

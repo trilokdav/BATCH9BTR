@@ -226,3 +226,9 @@
 0:0:0:0:0:0:0:1 - - [19/Apr/2022:20:33:43 +0530] "GET /BusinessTripRequest/user/user-personal-detail.jsp HTTP/1.1" 200 13523
 0:0:0:0:0:0:0:1 - - [19/Apr/2022:20:33:43 +0530] "GET /BusinessTripRequest/css/bootstrap.min.css HTTP/1.1" 200 140421
 0:0:0:0:0:0:0:1 - - [19/Apr/2022:20:33:43 +0530] "GET /BusinessTripRequest/css/sidebar-style.css HTTP/1.1" 200 3162
+127.0.0.1 - - [19/Apr/2022:21:04:40 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [19/Apr/2022:21:04:43 +0530] "GET /BusinessTripRequest/ HTTP/1.1" 200 1058
+127.0.0.1 - - [19/Apr/2022:21:22:28 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [19/Apr/2022:21:22:29 +0530] "GET /BusinessTripRequest/ HTTP/1.1" 200 1058
+0:0:0:0:0:0:0:1 - - [19/Apr/2022:21:22:45 +0530] "POST /BusinessTripRequest/login.jsp HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [19/Apr/2022:21:22:50 +0530] "GET /BusinessTripRequest/user/user-personal-detail.jsp HTTP/1.1" 200 13526
