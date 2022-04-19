@@ -506,3 +506,8 @@
 2022-04-19 12:29:44,403 [Worker-111: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Evosys\BTR\TECH9BTR\BusinessTripRequest\src\main\resources
 2022-04-19 12:29:44,405 [Worker-111: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-04-19 12:29:44,405 [Worker-111: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Evosys\BTR\TECH9BTR\BusinessTripRequest\src\test\resources
+2022-04-19 12:49:08,154 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-04-19 12:49:18,903 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-19 12:49:18,904 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Evosys\BTR\TECH9BTR\BusinessTripRequest\src\main\resources
+2022-04-19 12:49:18,938 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-19 12:49:18,939 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Evosys\BTR\TECH9BTR\BusinessTripRequest\src\test\resources

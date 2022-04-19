@@ -143,3 +143,7 @@
 0:0:0:0:0:0:0:1 - - [19/Apr/2022:12:30:08 +0530] "GET /BusinessTripRequest/user/user-new-trip.jsp HTTP/1.1" 200 13434
 0:0:0:0:0:0:0:1 - - [19/Apr/2022:12:30:20 +0530] "GET /BusinessTripRequest/user/user-trip-history.jsp HTTP/1.1" 200 7005
 0:0:0:0:0:0:0:1 - - [19/Apr/2022:12:30:38 +0530] "GET /BusinessTripRequest/user/user-new-trip.jsp HTTP/1.1" 200 13434
+127.0.0.1 - - [19/Apr/2022:12:49:53 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [19/Apr/2022:12:49:57 +0530] "GET /BusinessTripRequest/ HTTP/1.1" 200 1058
+0:0:0:0:0:0:0:1 - - [19/Apr/2022:12:50:09 +0530] "POST /BusinessTripRequest/login.jsp HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [19/Apr/2022:12:50:09 +0530] "GET /BusinessTripRequest/user/user-personal-detail.jsp HTTP/1.1" 200 13510
