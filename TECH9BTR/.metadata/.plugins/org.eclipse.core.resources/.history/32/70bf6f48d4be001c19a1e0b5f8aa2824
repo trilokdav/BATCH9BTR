@@ -1,0 +1,78 @@
+package com.login.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Driver;
+
+import com.login.bean.LoginBean;
+import com.login.util.DBConnection;
+
+public class LoginDao 
+{
+	
+	public String authenticateUser(LoginBean loginBean)
+	{
+		 String email_id = loginBean.getEmail_id();
+		    String password = loginBean.getPassword();
+		 
+
+		    String emailIDDB = "";
+		    String passwordDB = "";
+		    String roleDB = "";
+		 
+		    //Connection con = null;
+		    //Statement statement = null;
+		    ResultSet resultSet;
+	    try
+	    {
+	    	Class driver = Class.forName("oracle.jdbc.driver.OracleDriver");
+			DriverManager.registerDriver((Driver) driver.newInstance());
+			final Connection connection = DBConnection.openConnection();
+			//statement = connection.createStatement();
+			final Statement statement = connection.createStatement();
+//	        con = DBConnection.createConnection();
+			selectemp(statement);
+	        //resultSet = statement.executeQuery("select email_id,password from BATCH9BTR_USER_DETAILS");
+//	        while(resultSet.next())
+//	        {
+//	            emailIDDB = resultSet.getString("email_id");
+//	            passwordDB = resultSet.getString("password");
+//	            roleDB = resultSet.getString("role");
+//	 
+//	            if(email_id.equals(emailIDDB) && password.equals(passwordDB) && roleDB.equals("Employee"))
+//	            return "Employee_role";
+//	            else if(email_id.equals(emailIDDB) && password.equals(passwordDB) && roleDB.equals("L1"))
+//	            return "L1_role";
+//	            else if(email_id.equals(emailIDDB) && password.equals(passwordDB) && roleDB.equals("L2"))
+//	            return "L2_Role";
+//	            else if(email_id.equals(emailIDDB) && password.equals(passwordDB) && roleDB.equals("L3"))
+//		            return "L3_Role";
+//	        }
+	        statement.close();
+			DBConnection.closeConnection();
+	    }
+	    catch (SQLException | ClassNotFoundException e) {
+
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    return "Invalid user credentials";
+	}
+	private static void selectemp(final Statement select) throws SQLException {
+		final String sql = "select email_id,password from BATCH9BTR_USER_DETAILS";
+		final ResultSet resultSet = select.executeQuery(sql);
+		while (resultSet.next()) {
+			 System.out.println(resultSet.getString("email_id"));
+             System.out.println(resultSet.getString("password"));
+		}
+		resultSet.close();
+	}
+}

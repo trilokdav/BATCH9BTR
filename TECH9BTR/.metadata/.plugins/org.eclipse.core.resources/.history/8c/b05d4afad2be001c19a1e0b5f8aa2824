@@ -1,0 +1,70 @@
+package com.login.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Driver;
+
+import com.login.bean.LoginBean;
+import com.login.util.DBConnection;
+
+public class LoginDao 
+{
+	@SuppressWarnings("deprecation")
+	public String authenticateUser(LoginBean loginBean)
+	{
+	    String email_id = loginBean.getEmail_id();
+	    String password = loginBean.getPassword();
+	 
+	    //Connection con = null;
+	    //Statement statement = null;
+	    ResultSet resultSet = null;
+	 
+	    String emailIDDB = "";
+	    String passwordDB = "";
+	    String roleDB = "";
+	 
+	    try
+	    {
+	    	Class driver = Class.forName("oracle.jdbc.driver.OracleDriver");
+			DriverManager.registerDriver((Driver) driver.newInstance());
+			final Connection connection = DBConnection.openConnection();
+			// select * from dept
+			//statement = connection.createStatement();
+			final Statement statement = connection.createStatement();
+//	        con = DBConnection.createConnection();
+			
+	        resultSet = statement.executeQuery("select EMAIL_ID, PASSWORD  from BATCH9BTR_USER_DETAILS");
+	        while(resultSet.next())
+	        {
+	            emailIDDB = resultSet.getString("email_id");
+	            passwordDB = resultSet.getString("password");
+	            roleDB = resultSet.getString("role");
+	 
+	            if(email_id.equals(emailIDDB) && password.equals(passwordDB) && roleDB.equals("Employee"))
+	            return "Employee_role";
+	            else if(email_id.equals(emailIDDB) && password.equals(passwordDB) && roleDB.equals("L1"))
+	            return "L1_role";
+	            else if(email_id.equals(emailIDDB) && password.equals(passwordDB) && roleDB.equals("L2"))
+	            return "L2_Role";
+	            else if(email_id.equals(emailIDDB) && password.equals(passwordDB) && roleDB.equals("L3"))
+		            return "L3_Role";
+	        }
+	        statement.close();
+			DBConnection.closeConnection();
+	    }
+	    catch (SQLException | ClassNotFoundException e) {
+
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    return "Invalid user credentials";
+	}
+}
