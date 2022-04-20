@@ -40,7 +40,7 @@
             </div>
 
             <ul class="list-unstyled components">
-                <p><%=session.getAttribute("email") %></p>
+                <p><%=session.getAttribute("fname")%> <%=session.getAttribute("lname")%></p>
                 
                     <!-- <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
                       <ul class="collapse list-unstyled" id="homeSubmenu">

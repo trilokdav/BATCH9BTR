@@ -26,7 +26,12 @@
         crossorigin="anonymous"></script>
 
 </head>
-
+<% //In case, if User session is not set, redirect to Login page.
+if((request.getSession(false).getAttribute("Employee")== null) )
+{
+%>
+<jsp:forward page="index.jsp"></jsp:forward>
+<%} %>
 <body>
 
     <div class="wrapper">
@@ -41,7 +46,7 @@
             </div>
 
             <ul class="list-unstyled components">
-                <p><%=session.getAttribute("email") %></p>
+                <p><%=request.getAttribute("userName") %></p>
                 
                     <!-- <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
                       <ul class="collapse list-unstyled" id="homeSubmenu">
