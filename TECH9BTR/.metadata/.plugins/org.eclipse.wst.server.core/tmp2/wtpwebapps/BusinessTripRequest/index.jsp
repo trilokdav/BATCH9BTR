@@ -21,22 +21,24 @@
 </head>
 
 <body>
+	<% session.invalidate(); %>
+	
 	<div class="login-box">
     <h2>Login</h2>
     
-    <form method="post" action="LoginServlets">
-     <span style="color:red"><%=(request.getAttribute("status") == null) ? "" : request.getAttribute("status")%></span>
+    <form method="post" action="login.jsp">
+    
       <div class="user-box">
         <input type="text" name="email" required>
         <label>EmailId</label>
       </div>
       <div class="user-box">
-        <input type="password" name="pass" required>
+        <input type="password" name="password" required>
         <label>Password</label>
       </div>
       <!-- <a href="#"><span></span>Submit</a> -->
 
-     <input class="button" type="submit" value="Login">
+     <input class="button" type="submit" name="submit" value="Login">
     </form>
   </div>
 </body>
