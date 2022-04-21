@@ -10,13 +10,30 @@
   <link href="css/login_style.css" rel="stylesheet" type="text/css">
   <title>Login</title>
   <style>
-  .button
-{
-  text-align: center;
-  margin:0 auto;
-  align:center;
-
+  
+  .but {
+  position: relative;
+  display: inline-block;
+  padding: 8px 16px;
+  color: #ffffff;
+  background: #754edd;
+  border-radius: 15px;
+  font-size: 14px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 20px;
+  letter-spacing: 3px;
+  border: none;
 }
+
+  .but:hover {
+  background: #e2114f;
+  color: #fff;
+  border-radius: 15px;
+  border: none;
+  }
+  
   </style>
 </head>
 
@@ -36,9 +53,9 @@
         <input type="password" name="password" required>
         <label>Password</label>
       </div>
-      <!-- <a href="#"><span></span>Submit</a> -->
+     
 
-     <input class="button" type="submit" name="submit" value="Login">
+     <input class="but" type="submit" name="submit" value="Login">
     </form>
   </div>
 </body>

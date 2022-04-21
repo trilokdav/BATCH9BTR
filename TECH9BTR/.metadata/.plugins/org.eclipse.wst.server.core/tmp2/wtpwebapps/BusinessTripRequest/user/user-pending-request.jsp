@@ -114,7 +114,7 @@
 				String sid=(String)session.getAttribute("uid");
 				Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
 				Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@132.145.42.131:1521/Testdb_pdb1.evopaassub1.evopaasvcn.oraclevcn.com","trainee_schema","Trn__Schema_21");
-				String query = "select * from batch9btr_trip_details t INNER JOIN batch9btr_approval_l1 a ON t.trip_id=a.trip_id INNER JOIN batch9btr_approval_l2 b ON t.trip_id=b.trip_id INNER JOIN batch9btr_approval_l3 c ON t.trip_id=c.trip_id where a.approval_status='pending' and b.approval_status='pending' and c.approval_status='pending' and t.user_id='"+sid+"'";
+				String query = "select * from batch9btr_trip_details t INNER JOIN batch9btr_approval_l1 a ON t.trip_id=a.trip_id INNER JOIN batch9btr_approval_l2 b ON t.trip_id=b.trip_id INNER JOIN batch9btr_approval_l3 c ON t.trip_id=c.trip_id where a.approval_status='pending' or b.approval_status='pending' or c.approval_status='pending' or t.user_id='"+sid+"'";
 				Statement st = conn.createStatement();
 				ResultSet rs = st.executeQuery(query);
 				while (rs.next()) {
@@ -180,8 +180,28 @@
 					</div>
 
 					<hr />
-					<footer class="blockquote-footer">Request Submitted on
-						<%=rs.getString("submit_date")%></footer>
+					
+					<footer class="blockquote-footer">
+					<div class="row">
+						<div class="col-md-3 col-sm-3 col-xl-3 text-center">
+						 	Request Submitted on <%=rs.getDate("submit_date")%>
+						</div>
+						
+						<div class="col-md-3 col-sm-3 col-xl-3 text-center">
+							L1 Status: <%=rs.getString("approval_status")%>  
+						</div>
+						
+						<div class="col-md-3 col-sm-3 col-xl-3 text-center">
+							L2 Status: <%=rs.getString("approval_status")%>
+						</div>
+						
+						<div class="col-md-3 col-sm-3 col-xl-3 text-center">
+							L3 Status: <%=rs.getString("approval_status")%>
+						</div>
+					
+					</div>					
+	
+					</footer>
 
 				</div>
 			</div>

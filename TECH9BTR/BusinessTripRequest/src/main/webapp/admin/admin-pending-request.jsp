@@ -48,7 +48,7 @@
             </div>
 
             <ul class="list-unstyled components">
-                <p><%= session.getAttribute("fname") %> <%= session.getAttribute("lname") %> <%= session.getAttribute("uid") %></p>
+                <p><%= session.getAttribute("fname") %> <%= session.getAttribute("lname") %></p>
                 
                     <!-- <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
                       <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -122,16 +122,21 @@
 				Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
 				Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@132.145.42.131:1521/Testdb_pdb1.evopaassub1.evopaasvcn.oraclevcn.com","trainee_schema","Trn__Schema_21");
 				
+				
 				String query = "";
 
-				if(sid == "2"){
-					query = "select * from batch9btr_trip_details t INNER JOIN batch9btr_approval_l1 a ON t.trip_id=a.trip_id where a.approval_status='pending'";
+
+				if(sid.equals("2")){
+					 query = "select * from batch9btr_trip_details t INNER JOIN batch9btr_approval_l1 a ON t.trip_id=a.trip_id where a.approval_status='pending'";
 				}
-				else if( sid == "3"){
-					query = "";
+				else if( sid.equals("3")){
+					 query = "select * from batch9btr_trip_details t INNER JOIN batch9btr_approval_l1 a ON t.trip_id=a.trip_id INNER JOIN batch9btr_approval_l2 b ON t.trip_id=b.trip_id where a.approval_status='approved' and b.approval_status = 'pending'";
+				}
+				else if ( sid.equals("4")){
+					 query = "select * from batch9btr_trip_details t INNER JOIN batch9btr_approval_l2 b ON t.trip_id=b.trip_id INNER JOIN batch9btr_approval_l3 c ON t.trip_id=c.trip_id where b.approval_status='approved' and c.approval_status = 'pending'";
 				}
 				else{
-					query = "";
+					 query = "";
 				}
 				
 				
@@ -140,11 +145,13 @@
 				while (rs.next()) {
 			%>
             
+            <form method = "get" action="approve-request.jsp">
 			<div class="card shadow mb-5 m-4   rounded">
 			  <div class="card-header text-light" style="background: linear-gradient(to right, #754edd, #e2114f);">
 			   <div class="row">
 				  <div class="col-md-9 col-sm-12 col-xl-9 ">
 				  <h4> Trip No. <%=rs.getString("trip_id")%> </h4>
+				  <input type="hidden" name="tid" value="<%=rs.getString("trip_id")%>" />
 				  </div>
 				  <div class="col-md-3 col-sm-12 col-xl-3 p-1 d-flex justify-content-center">
 				  <span class="badge badge-pill badge-info p-2" style="font-size: 16px;">Waiting for approval</span>
@@ -191,32 +198,24 @@
 			      <hr/> 
 			      <div class="row">
 			      	<div class="col-md-8 col-sm-6 col-xl-8">
-			      		<footer class="blockquote-footer">Request Submitted on 12/04/2022</footer>
+			      		<footer class="blockquote-footer">Request Submitted on <%=rs.getDate("submit_date")%></footer>
 			      	</div>
 			      	
 			      	<div class="col-md-2 col-sm-4 col-xl-2 p-1">
-			      		<button type="submit" class="btn btn-success btn-block">Accept</button>
+			      		<button type="submit" name="accept" class="btn btn-success btn-block">Accept</button>
 			      	</div>
 			      	
 			      	<div class="col-md-2 col-sm-4 col-xl-2 p-1">
-			      		<button type="submit" class="btn btn-danger btn-block" id="reject" data-toggle="modal" data-target="#reject-modal">Reject</button>
+			      		<button type="button" class="btn btn-danger btn-block" id="reject" data-toggle="modal" data-target="#reject-modal">Reject</button>
 			      	</div>
 			      </div>
 
 			  </div>
 			</div> 
-			
-			
-			<%
-			}
-			} 
-            catch (Exception e) {
-			}
-			%>
-			
-	
-			
-		<!-- Reject Modal -->
+			 </form>
+			 
+			 
+			 <!-- Reject Modal -->
 
 	      <div class="modal fade" id="reject-modal" tabindex="-1" role="dialog">
 	        <div class="modal-dialog modal-dialog-centered" role="document">
@@ -228,10 +227,11 @@
 	              </button>
 	            </div>
 	
-	            <form method="POST" action="">
+	            <form method="get" action="reject-request.jsp">
 	              <div class="modal-body">
 	                <div class="row">
 	                  <div class="col-12">
+	                  	<input type="hidden" name="tid" value="<%=rs.getString("trip_id")%>" />
 	                    <h5 class="danger" style="color:red;">Are you sure you want to reject this request?</h5>
 	                  </div>
 	                </div>
@@ -239,7 +239,7 @@
 	
 	              <div class="modal-footer">
 	                <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
-	                <button type="button" class="btn btn-danger">Yes</button>
+	                <button type="submit" class="btn btn-danger">Yes</button>
 	              </div>
 	
 	            </form>
@@ -247,11 +247,22 @@
 	        </div>
 	      </div>
 
-      <!-- Reject Modal End -->     
-            
-            
-           
-           
+      <!-- Reject Modal End -->
+			 
+			 
+			 
+			 
+			 
+			 
+			
+			<%
+			}
+			} 
+            catch (Exception e) {
+			}
+			%>
+			
+                      
         </div>
     </div>
 

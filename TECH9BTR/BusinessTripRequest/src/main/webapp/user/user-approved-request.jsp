@@ -122,8 +122,9 @@
 					String query = "select * from batch9btr_trip_details t INNER JOIN batch9btr_approval_l1 a ON t.trip_id=a.trip_id INNER JOIN batch9btr_approval_l2 b ON t.trip_id=b.trip_id INNER JOIN batch9btr_approval_l3 c ON t.trip_id=c.trip_id where a.approval_status='approved' and b.approval_status='approved' and c.approval_status='approved' and t.user_id='"+sid+"'";
 					Statement st = conn.createStatement();
 					ResultSet rs = st.executeQuery(query);
-					if(rs.next()){
+					while(rs.next()){
            %>
+           
  			
  			<div class="card shadow  mb-5 m-4 rounded">
 			  <div class="card-header text-light" style="background: linear-gradient(to right, #754edd, #e2114f);">

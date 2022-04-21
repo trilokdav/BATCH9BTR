@@ -58,8 +58,11 @@
     } 
     else 
     {
-        out.println("Either you enter Invalid UserName or Password! Please Try Again");
-        response.sendRedirect("index.jsp");
+    	
+        out.println("<script type=\"text/javascript\">");
+        out.println("alert('Invalid Username or Password');");
+        out.println("window.location.href = \"index.jsp\";");
+        out.println("</script>"); 
      %>
     <%
     } 
