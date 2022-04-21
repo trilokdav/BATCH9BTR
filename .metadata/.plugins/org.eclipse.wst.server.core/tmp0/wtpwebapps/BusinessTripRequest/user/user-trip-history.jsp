@@ -53,7 +53,7 @@
 			</div>
 
 			<ul class="list-unstyled components">
-				<p><%=session.getAttribute("email") %></p>
+				<p><%=session.getAttribute("fname")%> <%=session.getAttribute("lname")%></p>
 
 				<!-- <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
                       <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -150,9 +150,10 @@
 
 			try 
             {
+				    String sid=(String)session.getAttribute("uid");
 					Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
-					Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","sys as sysdba","root");
-					String query = "select * from BATCH9BTR_TRIP_DETAILS where user_id='1'";
+					Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@132.145.42.131:1521/Testdb_pdb1.evopaassub1.evopaasvcn.oraclevcn.com","trainee_schema","Trn__Schema_21");
+					String query = "select * from BATCH9BTR_TRIP_DETAILS where user_id='"+sid+"'";
 					Statement st = conn.createStatement();
 					ResultSet rs = st.executeQuery(query);
 					while(rs.next()){

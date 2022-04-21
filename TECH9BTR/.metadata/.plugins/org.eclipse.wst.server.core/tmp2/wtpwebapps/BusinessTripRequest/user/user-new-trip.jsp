@@ -42,7 +42,8 @@
             </div>
 
             <ul class="list-unstyled components">
-                <p><%=session.getAttribute("email") %></p>
+         
+                <p><%=session.getAttribute("fname")%> <%=session.getAttribute("lname")%></p>
 
                 <!-- <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
                       <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -108,7 +109,8 @@
 
             <h3>Create new trip request</h3>
            	<hr/>
-            <form>
+            <form  action="newtravel.jsp"  method="get">
+            
 			 <div class="card shadow  mb-5  rounded m-4" style="background:linen;">
              <div class="card-body">
                 <div class="form-group">
@@ -116,26 +118,34 @@
                         <div class="col-md-3 col-sm-12 text-center">
                             <label for="purpose">Travel Purpose</label>
                         </div>
+                        <%
+						    try{
+						         Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
+						         Connection conn =DriverManager.getConnection("jdbc:oracle:thin:@132.145.42.131:1521/Testdb_pdb1.evopaassub1.evopaasvcn.oraclevcn.com","trainee_schema","Trn__Schema_21");
+									String query="SELECT * FROM BATCH9BTR_TRAVEL_PURPOSE";
+						         Statement st = conn.createStatement() ;
+						        ResultSet rs =st.executeQuery(query) ;
+						%>
                         <div class="col-md-3 col-sm-12">
                             <select name="purpose" id="purpose" class="form-control border border-primary">
-                                <option value="#">-- Select --</option>
-                                <option value="1>">Workshop</option>
-                                <option value="2">Training</option>
-                                <option value="3">Client Visit</option>
-                                <option value="4">Prospect Visit</option>
-                                <option value="5">Corporate Event</option>
-                                <option value="6">Branch Visit</option>
-                                <option value="7">Research</option>
-                                <option value="8">Other</option>
                                 
+                            <%  while(rs.next()){ %>
+            					<option value="<%= rs.getString(1)%>"><%= rs.getString(2)%></option>
+       							 <% 
+       							 } 
+       							 %>
                             </select>
+                            <%
+							  }
+							catch(Exception e){}
+						%>
                         </div>
              
                         <div class="col-md-3 col-sm-12 text-center">
-                            <label for="dcountry">Departing country</label>
+                            <label for="dtcountry">Departing country</label>
                         </div>
                         <div class="col-md-3 col-sm-12">
-                            <input type="text" name="dcountry" class="form-control border border-primary" id="dcountry">
+                            <input type="text" name="dtcountry" class="form-control border border-primary" id="dcountry">
                         </div>
                     </div>
                 </div>
@@ -182,7 +192,7 @@
                             <label for="d_addr">Destination address</label>
                         </div>
                         <div class="col-md-3 col-sm-12">
-                            <input type="text" name="d_addr" class="form-control border border-primary" id="d_addr"
+                            <input type="text" name="d_addr" class="form-control border border-primary" id="d_addr" 
                                 placeholder="Address line 1, Street name">
                         </div>
 

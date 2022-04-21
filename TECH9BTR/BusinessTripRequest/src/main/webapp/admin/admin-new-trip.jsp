@@ -1,3 +1,5 @@
+<%@ page language="java" import="java.sql.ResultSet" import="java.sql.Statement" import="java.sql.Connection" import="java.sql.DriverManager" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 
@@ -40,7 +42,7 @@
             </div>
 
             <ul class="list-unstyled components">
-                <p>Soumyadeep Sinha</p>
+                <p><%=session.getAttribute("fname")%> <%=session.getAttribute("lname")%></p>
                 
                     <!-- <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
                       <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -65,7 +67,7 @@
                     <a href="admin-approved-request.jsp">All Approved Request</a>
                 </li>
                 <li>
-                    <a href="#">Find Employee</a>
+                    <a href="all-employee.jsp">All Employees</a>
                 </li>
                 <li>
                     <a href="../index.jsp">Logout</a>
@@ -113,13 +115,31 @@
                         <div class="col-md-3 col-sm-12 text-center">
                             <label for="purpose">Travel Purpose</label>
                         </div>
+        
+                        <%
+						    try{
+						         Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
+						         Connection conn =DriverManager.getConnection("jdbc:oracle:thin:@132.145.42.131:1521/Testdb_pdb1.evopaassub1.evopaasvcn.oraclevcn.com","trainee_schema","Trn__Schema_21");
+									String query="SELECT * FROM BATCH9BTR_TRAVEL_PURPOSE";
+						         Statement st = conn.createStatement() ;
+						        ResultSet rs =st.executeQuery(query) ;
+						%>
                         <div class="col-md-3 col-sm-12">
                             <select name="purpose" id="purpose" class="form-control border border-primary">
-                                <option value="#">-- Select --</option>
+                                <!-- <option value="#">-- Select --</option>
                                 <option value="Project2">project 2</option>
                                 <option value="Project3">project 3</option>
-                                <option value="Project4">project 4</option>
+                                <option value="Project4">project 4</option> -->
+                                <%  while(rs.next()){ %>
+            					<option><%= rs.getString(2)%></option>
+       							 <% 
+       							 } 
+       							 %>
                             </select>
+                            <%
+							  }
+							catch(Exception e){}
+						%>
                         </div>
 
                         <div class="col-md-3 col-sm-12 text-center">

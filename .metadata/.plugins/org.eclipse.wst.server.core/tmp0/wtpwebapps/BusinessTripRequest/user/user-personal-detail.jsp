@@ -43,7 +43,7 @@
             </div>
 
             <ul class="list-unstyled components">
-                <p><%=session.getAttribute("email") %></p>
+                <p><%=session.getAttribute("fname")%> <%=session.getAttribute("lname")%></p>
                     <!-- <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
                       <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
@@ -113,9 +113,11 @@
           <%  	
            	 try 
              {
+           		 	/* String sid=(String)request.getSession().getAttribute("uid"); */
+           		 	String sid=(String)session.getAttribute("uid");
 					Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
 					Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@132.145.42.131:1521/Testdb_pdb1.evopaassub1.evopaasvcn.oraclevcn.com","trainee_schema","Trn__Schema_21");
-					String query = "select * from BATCH9BTR_USER_DETAILS a INNER JOIN batch9btr_department_mst b ON  a.dept_id=b.dept_id  INNER JOIN batch9btr_nationality_mst c ON  a.nationality_id=c.nationality_id where user_id='1'";
+					String query = "select * from BATCH9BTR_USER_DETAILS a INNER JOIN batch9btr_department_mst b ON  a.dept_id=b.dept_id  INNER JOIN batch9btr_nationality_mst c ON  a.nationality_id=c.nationality_id where user_id='"+sid+"'";
 					Statement st = conn.createStatement();
 					ResultSet rs = st.executeQuery(query);
 					if(rs.next()){
