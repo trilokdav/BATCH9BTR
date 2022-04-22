@@ -180,11 +180,11 @@
 			      	</div>
 			      	
 			      	<div class="col-md-3 col-sm-3 col-xl-3 bg-light text-center">
-			      	<span> Advance Amount: <%=rs.getString("adv_amt")%> </span>
+			      	<span> Advance Amount: <%=rs.getString("adv_amt")%> <%=rs.getString("Currency")%> </span>
 			      	</div>
 			      	
 			      	<div class="col-md-3 col-sm-3 col-xl-3 text-center">
-			      	<span> Estimated Cost: <%=rs.getString("est_cost")%> </span>
+			      	<span> Estimated Cost: <%=rs.getString("est_cost")%> <%=rs.getString("Currency")%></span>
 			      	</div>	      			      
 			      </div>
 			

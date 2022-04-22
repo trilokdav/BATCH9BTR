@@ -71,6 +71,7 @@
 				<li><a href="user-new-trip.jsp">New Trip Request</a></li>
 				<li><a href="user-pending-request.jsp">Pending Request</a></li>
 				<li><a href="user-approved-request.jsp">Approved Request</a></li>
+				<li><a href="user-rejected-request.jsp">Rejected Request</a></li>
 				<li class="active"><a href="user-trip-history.jsp">Trip
 						History</a></li>
 				<li><a href="../index.jsp">Logout</a></li>

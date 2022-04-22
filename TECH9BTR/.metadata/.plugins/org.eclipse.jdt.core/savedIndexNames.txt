@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+D:\trilokdav\BATCH9BTR\TECH9BTR\.metadata\.plugins\org.eclipse.jdt.core
-842231552.index
-2013291161.index

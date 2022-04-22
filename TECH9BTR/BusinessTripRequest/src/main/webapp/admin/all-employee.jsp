@@ -68,8 +68,7 @@
 
 				<li><a href="admin-new-trip.jsp">New Trip Request</a></li>
 				<li><a href="admin-pending-request.jsp">Pending Request</a></li>
-				<li><a href="admin-approved-request.jsp">All Approved
-						Request</a></li>
+				<li><a href="admin-approved-request.jsp">All Approved Request</a></li>
 				<li><a class="active" href="all-employee.jsp">All Employees</a>
 				</li>
 				<li><a href="../index.jsp">Logout</a></li>

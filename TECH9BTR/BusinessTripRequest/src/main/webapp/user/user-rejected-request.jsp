@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Pending Requests</title>
+<title>Rejected Requests</title>
 
 <!-- Bootstrap CSS CDN -->
 <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -63,10 +63,10 @@
                     </ul>-->
 				<li><a href="user-personal-detail.jsp">Personal Details</a></li>
 				<li><a href="user-new-trip.jsp">New Trip Request</a></li>
-				<li class="active"><a href="user-pending-request.jsp">Pending
+				<li ><a href="user-pending-request.jsp">Pending
 						Request</a></li>
 				<li><a href="user-approved-request.jsp">Approved Request</a></li>
-				<li><a href="user-rejected-request.jsp">Rejected Request</a></li>
+				<li class="active"><a href="user-rejected-request.jsp">Rejected Request</a></li>
 				<li><a href="user-trip-history.jsp">Trip History</a></li>
 				<li><a href="../index.jsp">Logout</a></li>
 			</ul>
@@ -95,7 +95,7 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="nav navbar-nav ml-auto">
 							<li class="nav-item active">
-								<h3 class="nav-link">Pending Requests</h3>
+								<h3 class="nav-link">Rejected Requests</h3>
 							</li>
 						</ul>
 					</div>
@@ -104,7 +104,7 @@
 
 
 
-			<h3>All pending requests</h3>
+			<h3>All rejected requests</h3>
 			<hr />
 
 			<%
@@ -112,7 +112,7 @@
 				String sid=(String)session.getAttribute("uid");
 				Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
 				Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@132.145.42.131:1521/Testdb_pdb1.evopaassub1.evopaasvcn.oraclevcn.com","trainee_schema","Trn__Schema_21");
-				String query = "select * from batch9btr_trip_details t INNER JOIN batch9btr_approval_l1 a ON t.trip_id=a.trip_id INNER JOIN batch9btr_approval_l2 b ON t.trip_id=b.trip_id INNER JOIN batch9btr_approval_l3 c ON t.trip_id=c.trip_id where a.approval_status='pending' and b.approval_status='pending' and c.approval_status='pending' or a.approval_status='approved' and b.approval_status='pending' and c.approval_status='pending' or a.approval_status='approved' and b.approval_status='approved' and c.approval_status='pending' and t.user_id='"+sid+"'";
+				String query = "select * from batch9btr_trip_details t INNER JOIN batch9btr_approval_l1 a ON t.trip_id=a.trip_id INNER JOIN batch9btr_approval_l2 b ON t.trip_id=b.trip_id INNER JOIN batch9btr_approval_l3 c ON t.trip_id=c.trip_id where a.approval_status='rejected' or b.approval_status='rejected' or c.approval_status='rejected' and t.user_id='"+sid+"'";
 				Statement st = conn.createStatement();
 				ResultSet rs = st.executeQuery(query);
 				while (rs.next()) {
@@ -129,8 +129,8 @@
 						</div>
 						<div
 							class="col-md-3 col-sm-12 col-xl-3 p-1 d-flex justify-content-center">
-							<span class="badge badge-pill badge-info p-2"
-								style="font-size: 16px;">Waiting for approval</span>
+							<span class="badge badge-pill badge-warning p-2"
+								style="font-size: 16px;">Request Rejected</span>
 						</div>
 					</div>
 				</div>
@@ -180,24 +180,9 @@
 					<hr />
 					
 					<footer class="blockquote-footer">
-					<div class="row">
-						<div class="col-md-3 col-sm-3 col-xl-3 text-center">
-						 	- Request Submitted on <%=rs.getDate("submit_date")%>
-						</div>
-						
-						<div class="col-md-3 col-sm-3 col-xl-3 text-center">
-							L1 Status: <%=rs.getString("approval_status")%>  
-						</div>
-						
-						<div class="col-md-3 col-sm-3 col-xl-3 text-center">
-							L2 Status: <%=rs.getString("approval_status")%>
-						</div>
-						
-						<div class="col-md-3 col-sm-3 col-xl-3 text-center">
-							L3 Status: <%=rs.getString("approval_status")%>
-						</div>
 					
-					</div>					
+						 	Request Submitted on <%=rs.getDate("submit_date")%>
+										
 	
 					</footer>
 

@@ -69,6 +69,7 @@
                 <li>
                     <a href="user-approved-request.jsp">Approved Request</a>
                 </li>
+                <li><a href="user-rejected-request.jsp">Rejected Request</a></li>
                 <li>
                     <a href="user-trip-history.jsp">Trip History</a>
                 </li>

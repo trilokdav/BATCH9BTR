@@ -69,6 +69,7 @@
                 <li class="active">
                     <a href="user-approved-request.jsp">Approved Request</a>
                 </li>
+                <li><a href="user-rejected-request.jsp">Rejected Request</a></li>
                 <li>
                     <a href="user-trip-history.jsp">Trip History</a>
                 </li>
@@ -166,16 +167,16 @@
 			      	</div>
 			      	
 			      	<div class="col-md-3 col-sm-3 col-xl-3 bg-light text-center">
-			      	<span> Advance Amount: <%=rs.getString("adv_amt")%> Dollar </span>
+			      	<span> Advance Amount: <%=rs.getString("adv_amt")%> <%=rs.getString("currency")%>  </span>
 			      	</div>
 			      	
 			      	<div class="col-md-3 col-sm-3 col-xl-3 text-center">
-			      	<span> Estimated Cost: <%=rs.getString("est_cost")%> Dollar </span>
+			      	<span> Estimated Cost: <%=rs.getString("est_cost")%> <%=rs.getString("currency")%> </span>
 			      	</div>	      			      
 			      </div>
 			
 			      <hr/> 
-			      <footer class="blockquote-footer">Request Approved By Soumyadeep Sinha on 12/04/2022 </footer>
+			      <footer class="blockquote-footer">Request Approved on <%=rs.getDate("approval_date")%> </footer>
 			  </div>
 			</div> 
 			

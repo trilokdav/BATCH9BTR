@@ -68,6 +68,7 @@
                 <li>
                     <a href="user-approved-request.jsp">Approved Request</a>
                 </li>
+                <li><a href="user-rejected-request.jsp">Rejected Request</a></li>
                 <li>
                     <a href="user-trip-history.jsp">Trip History</a>
                 </li>
@@ -184,7 +185,7 @@
                             <label for="dob">Date Of Birth: </label>
                         </div>
                         <div class="col-md-3 col-sm-12">
-                            <input type="text" name="dob" class="form-control border border-primary" id="dob" value="<%=rs.getString("dob")%>" readonly>
+                            <input type="text" name="dob" class="form-control border border-primary" id="dob" value="<%=rs.getDate("dob")%>" readonly>
                         </div>
                     </div>
                   </div>
@@ -203,7 +204,7 @@
                             <label for="doj">Date Of Joining: </label>
                         </div>
                         <div class="col-md-3 col-sm-12">
-                            <input type="text" name="doj" class="form-control border border-primary" id="doj" value="<%=rs.getString("joining_date")%>" readonly>
+                            <input type="text" name="doj" class="form-control border border-primary" id="doj" value="<%=rs.getDate("joining_date")%>" readonly>
                         </div>
                     </div>
                   </div>
