@@ -1,8 +1,0 @@
-INDEX VERSION 1.4+D:\Evosys\Business Trip Request\BATCH9BTR\TECH9BTR\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-3496710442.index
-667445369.index
-4096128903.index
-1458977727.index
-2402706765.index
-327537820.index
-842231552.index
